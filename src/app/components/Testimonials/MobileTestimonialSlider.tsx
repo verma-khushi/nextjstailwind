@@ -4,11 +4,9 @@ import ArrowLeft from "../../../../svg-components/ArrowLeft";
 import ArrowRight from "../../../../svg-components/ArrowRight";
 import SliderProvider from "../SliderProvider";
 import data from "./testimonials.json";
-function getTestimonialserverdata() {
-  return data;
-}
+import TestimonialCard from "./TestimonialCard";
+
 export default async function TestimonialSlide() {
-  const data = await getTestimonialserverdata();
   return (
     <>
       <div className=" 2xl:container bg-  p-10  relative   top-[195px]  ">
@@ -24,25 +22,7 @@ export default async function TestimonialSlide() {
                 <div className="bg-white rounded-lg py-16 px-10">
                   {data &&
                     data.map((testimonial, index) => (
-                      <>
-                        <div key={index} className="">
-                          <Image
-                            src={testimonial.image}
-                            alt={`teamMember-${index}`}
-                            width={124}
-                            height={124}
-                            className="mx-auto relative bottom-6"
-                            objectFit="contain"
-                          />
-                          <p className="text-center text-xsm  ">
-                            {testimonial.quote}
-                          </p>
-                        </div>
-                        <div className="text-center relative text-[14px]  items-center py-5">
-                          <h2 className=" font-[700] ">{testimonial.name}</h2>
-                          <span className="">{testimonial.role}</span>
-                        </div>
-                      </>
+                      <TestimonialCard testimonial={testimonial} key={index} />
                     ))}
                 </div>
               </div>
@@ -50,25 +30,7 @@ export default async function TestimonialSlide() {
                 <div className="bg-white rounded-lg py-16 px-10">
                   {data &&
                     data.map((testimonial, index) => (
-                      <>
-                        <div key={index} className="">
-                          <Image
-                            src={testimonial.image}
-                            alt={`teamMember-${index}`}
-                            width={124}
-                            height={124}
-                            className="mx-auto relative bottom-6"
-                            objectFit="contain"
-                          />
-                          <p className="text-center text-xsm  ">
-                            {testimonial.quote}
-                          </p>
-                        </div>
-                        <div className="text-center relative text-[14px]  items-center py-5">
-                          <h2 className=" font-[700] ">{testimonial.name}</h2>
-                          <span className="">{testimonial.role}</span>
-                        </div>
-                      </>
+                      <TestimonialCard testimonial={testimonial} key={index} />
                     ))}
                 </div>
               </div>
@@ -76,25 +38,7 @@ export default async function TestimonialSlide() {
                 <div className="bg-white rounded-lg py-16 px-10">
                   {data &&
                     data.map((testimonial, index) => (
-                      <>
-                        <div key={index} className="">
-                          <Image
-                            src={testimonial.image}
-                            alt={`teamMember-${index}`}
-                            width={124}
-                            height={124}
-                            className="mx-auto relative bottom-6"
-                            objectFit="contain"
-                          />
-                          <p className="text-center text-xsm  ">
-                            {testimonial.quote}
-                          </p>
-                        </div>
-                        <div className="text-center relative text-[14px]  items-center py-5">
-                          <h2 className=" font-[700] ">{testimonial.name}</h2>
-                          <span className="">{testimonial.role}</span>
-                        </div>
-                      </>
+                      <TestimonialCard testimonial={testimonial} key={index} />
                     ))}
                 </div>
               </div>

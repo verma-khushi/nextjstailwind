@@ -12,13 +12,14 @@ export default function Home() {
     <>
       <Hero />
       <Culture />
-      <Resource />
-      <OurValues />
+      <Resource/>
+      <OurValues/>
+  
+      <Team  />
+      <Leaders/>
+      <GreatPlaceToWork/>
+      <WeWorkFamily/>
 
-      <Team />
-      <Leaders />
-      <GreatPlaceToWork />
-      <WeWorkFamily />
     </>
   );
 }
