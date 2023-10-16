@@ -1,0 +1,15 @@
+.Mobile-slider {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .Mobile-slider {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktop-view {
+    display: none;
+  }
+}

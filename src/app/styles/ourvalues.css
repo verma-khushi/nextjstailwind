@@ -1,0 +1,25 @@
+ .accordian_container {
+ 
+  border-radius: 0;
+  border-left: 3px solid #0000ff;
+  margin-right: 10px;
+}
+.accordian_title{
+  color:black;
+}
+.Mobile-slider {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .Mobile-slider {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .desktop-view {
+    display: none;
+  }
+}
+
