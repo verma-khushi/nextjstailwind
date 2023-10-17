@@ -3,6 +3,14 @@ import Image from "next/image";
 import ArrowLeft from "../../../../svg-components/ArrowLeft";
 import ArrowRight from "../../../../svg-components/ArrowRight";
 import SliderProvider from "../SliderProvider";
+import data from "./weworkfamily.json";
+interface WeWorkFamily {
+  image: string;
+  title: string;
+}
+function getweworkfamily() {
+  return data;
+}
 export default function WeWorkFamily() {
   const Familyconfig = {
     all: {
@@ -21,7 +29,8 @@ export default function WeWorkFamily() {
       slidesToScroll: 1,
     },
   };
-
+  const family = getweworkfamily();
+  // console.log("family",family)
   return (
     <div className=" 2xl:container bg-lightorange   relative  md:top-[-1px] top-[150px] pb-12 py-3">
       <SliderProvider sliderConfig={Familyconfig}>
@@ -43,127 +52,21 @@ export default function WeWorkFamily() {
 
         <div className="blaze-track-container mx-16">
           <div className="blaze-track">
-            <div className=" ">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
+            {family.map((data, index) => (
+              <div key={index}>
+                <Image
+                  src={data.image}
+                  alt="teamMember"
+                  width={390}
+                  height={200}
+                  className=""
+                  objectFit="contain"
+                />
+                <div className="relative text-[14px] items-center  ">
+                  <h2 className="md:text-[28px] text-base ">{data.title}</h2>
+                </div>
               </div>
-            </div>
-            <div className=" ">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
-
-            <div className=" ">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
-            <div className=" ">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
-            <div className=" ">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
-            <div className="">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
-            <div className="">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
-            <div className="">
-              <Image
-                src="/Family.png"
-                alt="teamMember"
-                width={390}
-                height={200}
-                className=""
-                objectFit="contain"
-              />
-              <div className="relative text-[14px] items-center  ">
-                <h2 className="md:text-[28px] text-base ">
-                  Awards and Celebrations
-                </h2>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </SliderProvider>
