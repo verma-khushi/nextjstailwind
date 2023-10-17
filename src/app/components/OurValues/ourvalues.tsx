@@ -4,10 +4,7 @@ import AccordionItem from "./Accordian";
 
 import AccordianSlider from "./MobileSlider";
 import "../../styles/ourvalues.css";
-/*1)border height issue
-2)open one accordian at once
 
-*/
 export default function OurValues() {
   return (
     <div>
