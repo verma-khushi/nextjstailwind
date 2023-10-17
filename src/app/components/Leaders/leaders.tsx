@@ -4,6 +4,17 @@ import ArrowLeft from "../../../../svg-components/ArrowLeft";
 import ArrowRight from "../../../../svg-components/ArrowRight";
 import "../../styles/leader.css";
 import SliderProvider from "../SliderProvider";
+import LeadersCard from "./leaderscard";
+import data from "./leaders.json";
+interface Leaders {
+  image: string;
+  name: string;
+  profession: string;
+}
+
+function getLeadersData() {
+  return data;
+}
 export default function Leaders() {
   const leadersSliderConfig = {
     all: {
@@ -22,6 +33,7 @@ export default function Leaders() {
       slidesToScroll: 1,
     },
   };
+  const leadersData = getLeadersData();
   return (
     <div className=" 2xl:container   md:p-12 p-4 relative   md:top-[-76px] right-3 top-[150px]">
       <SliderProvider sliderConfig={leadersSliderConfig}>
@@ -42,109 +54,9 @@ export default function Leaders() {
 
         <div className="blaze-track-container relative lg:left-0 md:left-2 left-3">
           <div className="blaze-track mx-4">
-            <div className="bg-white rounded-lg ">
-              <Image
-                src="/Leaders.png"
-                alt="teamMember"
-                width={359}
-                height={199}
-                className=""
-                objectFit="contain"
-              />
-              <div
-                className="text-center relative text-[14px] items-center border  p-8 2xl:w-[92.5%] leaders"
-                style={{ border: "1px solid lightgray" }}
-              >
-                <h2 className=" text-[18px] text-blue">Karan Virwani</h2>
-                <span className="text-sm">CEO, WeWork India</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg ">
-              <Image
-                src="/Leaders.png"
-                alt="teamMember"
-                width={359}
-                height={199}
-                className=""
-                objectFit="contain"
-              />
-              <div
-                className="text-center relative text-[14px] items-center border  p-8 2xl:w-[92.5%] leaders"
-                style={{ border: "1px solid lightgray" }}
-              >
-                <h2 className=" text-[18px] text-blue">Karan Virwani</h2>
-                <span className="text-sm">CEO, WeWork India</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg ">
-              <Image
-                src="/Leaders.png"
-                alt="teamMember"
-                width={359}
-                height={199}
-                className=""
-                objectFit="contain"
-              />
-              <div
-                className="text-center relative text-[14px] items-center border  p-8 2xl:w-[92.5%] leaders"
-                style={{ border: "1px solid lightgray" }}
-              >
-                <h2 className=" text-[18px] text-blue">Karan Virwani</h2>
-                <span className="text-sm">CEO, WeWork India</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg ">
-              <Image
-                src="/Leaders.png"
-                alt="teamMember"
-                width={359}
-                height={199}
-                className=""
-                objectFit="contain"
-              />
-              <div
-                className="text-center relative text-[14px] items-center border  p-8 2xl:w-[92.5%] leaders"
-                style={{ border: "1px solid lightgray" }}
-              >
-                <h2 className=" text-[18px] text-blue">Karan Virwani</h2>
-                <span className="text-sm">CEO, WeWork India</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg ">
-              <Image
-                src="/Leaders.png"
-                alt="teamMember"
-                width={359}
-                height={199}
-                className=""
-                objectFit="contain"
-              />
-              <div
-                className="text-center relative text-[14px] items-center border  p-8 2xl:w-[92.5%] leaders"
-                style={{ border: "1px solid lightgray" }}
-              >
-                <h2 className=" text-[18px] text-blue">Karan Virwani</h2>
-                <span className="text-sm">CEO, WeWork India</span>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg ">
-              <Image
-                src="/Leaders.png"
-                alt="teamMember"
-                width={359}
-                height={199}
-                className=""
-                objectFit="contain"
-              />
-              <div
-                className="text-center relative text-[14px] items-center border  p-8 2xl:w-[92.5%] leaders"
-                style={{ border: "1px solid lightgray" }}
-              >
-                <h2 className=" text-[18px] text-blue">Karan Virwani</h2>
-                <span className="text-sm">CEO, WeWork India</span>
-              </div>
-            </div>
+            {leadersData.map((leader: Leaders, index: number) => (
+              <LeadersCard key={index} leader={leader} />
+            ))}
           </div>
         </div>
       </SliderProvider>
