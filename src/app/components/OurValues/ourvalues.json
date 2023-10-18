@@ -1,27 +1,52 @@
 [
   {
-    "image": "/accordian.webp",
-    "title": "  Do the right thing",
-    "description": "The past two years at WeWork have been extremely valuable and life changing. I am fortunate to be surrounded by hard working colleagues, inspiring mentors and authentic leaders who have invested and continue to contribute to my experience here"
+    "title": "Do the right thing",
+    "content": "We know the ‘right thing’ is a deliberate action we must always take, and that it is based on integrity and builds trust with our people, members and our community. We show ownership in solving problems and making decisions. Each of us has an obligation to question actions inconsistent with our values.",
+    "image": {
+      "src": "/accordian.webp",
+      "alt": "Accordion Image",
+      "width": 250,
+      "height": 250
+    }
   },
   {
-    "image": "/accordian.webp2",
-    "title": "  Do the right thing",
-    "description": "The past two years at WeWork have been extremely valuable and life changing. I am fortunate to be surrounded by hard working colleagues, inspiring mentors and authentic leaders who have invested and continue to contribute to my experience here"
+    "title": "Strive to win together",
+    "content": "We know the ‘right thing’ is a deliberate action we must always take, and that it is based on integrity and builds trust with our people, members and our community. We show ownership in solving problems and making decisions. Each of us has an obligation to question actions inconsistent with our values.",
+    "image": {
+      "src": "/accordian2.webp",
+      "alt": "Accordion Image",
+      "width": 250,
+      "height": 250
+    }
   },
   {
-    "image": "/accordian.webp3",
-    "title": "  Do the right thing",
-    "description": "The past two years at WeWork have been extremely valuable and life changing. I am fortunate to be surrounded by hard working colleagues, inspiring mentors and authentic leaders who have invested and continue to contribute to my experience here"
+    "title": "Be entrepreneurial",
+    "content": "We know the ‘right thing’ is a deliberate action we must always take, and that it is based on integrity and builds trust with our people, members and our community. We show ownership in solving problems and making decisions. Each of us has an obligation to question actions inconsistent with our values.",
+    "image": {
+      "src": "/accordian3.webp",
+      "alt": "Accordion Image",
+      "width": 250,
+      "height": 250
+    }
   },
   {
-    "image": "/accordian.webp4",
-    "title": "  Do the right thing",
-    "description": "The past two years at WeWork have been extremely valuable and life changing. I am fortunate to be surrounded by hard working colleagues, inspiring mentors and authentic leaders who have invested and continue to contribute to my experience here"
+    "title": "Be sustainable",
+    "content": "We know the ‘right thing’ is a deliberate action we must always take, and that it is based on integrity and builds trust with our people, members and our community. We show ownership in solving problems and making decisions. Each of us has an obligation to question actions inconsistent with our values.",
+    "image": {
+      "src": "/accordian4.webp",
+      "alt": "Accordion Image",
+      "width": 250,
+      "height": 250
+    }
   },
   {
-    "image": "/accordian.webp5",
-    "title": "  Do the right thing",
-    "description": "The past two years at WeWork have been extremely valuable and life changing. I am fortunate to be surrounded by hard working colleagues, inspiring mentors and authentic leaders who have invested and continue to contribute to my experience here"
+    "title": "Be human,be kind",
+    "content": "We know the ‘right thing’ is a deliberate action we must always take, and that it is based on integrity and builds trust with our people, members and our community. We show ownership in solving problems and making decisions. Each of us has an obligation to question actions inconsistent with our values.",
+    "image": {
+      "src": "/accordian5.webp",
+      "alt": "Accordion Image",
+      "width": 250,
+      "height": 250
+    }
   }
 ]

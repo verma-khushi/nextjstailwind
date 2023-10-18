@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import "../../styles/ourvalues.css";
 import Image from "next/image";
@@ -55,6 +55,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
             width={image.width}
             height={image.height}
             className=""
+            priority={true}
           />
         </div>
       )}

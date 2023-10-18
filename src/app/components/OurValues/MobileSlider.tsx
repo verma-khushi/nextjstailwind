@@ -49,7 +49,7 @@ export default function AccordianSlider() {
                     {data.title}
                   </h3>
                   <p className="text-center text-xsm relative top-5">
-                    {data.description}
+                    {data.content}
                   </p>
                 </div>
               </div>
