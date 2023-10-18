@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-
+import data from "./header.json";
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -18,6 +18,7 @@ export default function Navbar() {
       className="flex fixed w-full bg-white top-0 left-0 z-20"
       id="top-section"
     >
+      {}
       {isNavOpen ? null : (
         <div className="2xl:container max-w-screen-xl relative left-[20px] flex gap-[10px] items-center p-7">
           <a href="" className="flex">
@@ -35,26 +36,11 @@ export default function Navbar() {
             id="navbar-sticky"
           >
             <ul className="flex font-sans md:flex-row md:space-x-8">
-              <li>
-                <a href="#" className="">
-                  Locations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="">
-                  Workspaces
-                </a>
-              </li>
-              <li>
-                <a href="#" className="">
-                  Enterprise
-                </a>
-              </li>
-              <li>
-                <a href="#" className="">
-                  Why WeWork
-                </a>
-              </li>
+              {data.MenuItems.map((data, index) => (
+                <li key={index}>
+                  <a href={data.url}>{data.text}</a>
+                </li>
+              ))}
             </ul>
             <div className="relative 2xl:left-[670px] md:left-[560px] space-x-10">
               <button className="font-sans">Login</button>
@@ -87,20 +73,13 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-            <div className="fixed left-0 h-full bg-white shadow-lg w-full">
+            <div className="fixed left-0  bg-white shadow-lg w-full">
               <ul className="p-16 space-y-10 text-center">
-                <li>
-                  <a href="#">Locations</a>
-                </li>
-                <li>
-                  <a href="#">Workspaces</a>
-                </li>
-                <li>
-                  <a href="#">Enterprise</a>
-                </li>
-                <li>
-                  <a href="#">Why WeWork</a>
-                </li>
+                {data.MenuItems.map((data, index) => (
+                  <li key={index}>
+                    <a href={data.url}>{data.text}</a>
+                  </li>
+                ))}
                 <div className="flex flex-col space-y-3">
                   <button className="font-sans">Login</button>
                   <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">

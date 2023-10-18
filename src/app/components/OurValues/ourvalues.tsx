@@ -21,7 +21,7 @@ export default function OurValues() {
         <h1 className="lg:text-xl font-semibold  relative md:left-[70px] left-[10px] md:text-base text-base ">
           Our values
         </h1>
-        <div className="flex flex-col space-y-3 pl-20 mt-10">
+        <div className="flex flex-col space-y-3 pl-14 mt-10">
           {Ourvaluesdata.map((data, index) => (
             <div key={index}>
               <AccordionItem

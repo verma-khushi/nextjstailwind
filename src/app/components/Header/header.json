@@ -1,0 +1,8 @@
+{
+  "MenuItems": [
+    { "text": "Locations", "url": "#Locations" },
+    { "text": "Workspaces", "url": "#Workspaces" },
+    { "text": "Enterprise", "url": "#Enterprise" },
+    { "text": "Why WeWork", "url": "#WhyWeWork" }
+  ]
+}
