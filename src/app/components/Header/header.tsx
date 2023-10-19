@@ -2,8 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import data from "./header.json";
+import { useUser } from "@auth0/nextjs-auth0/client";
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const { user, error, isLoading } = useUser();
+  // if (isLoading) return <div>Loading...</div>;
+  // if (error) return <div>{error.message}</div>;
 
   const toggleNavbar = () => {
     setIsNavOpen(!isNavOpen);
@@ -42,8 +46,20 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="relative 2xl:left-[670px] md:left-[560px] space-x-10">
-              <button className="font-sans">Login</button>
+            <div className="relative 2xl:left-[670px] md:left-[560px] space-x-10 flex">
+              {user ? (
+                <>
+                  <div>
+                    {user.name} <a href="/api/auth/logout">Logout</a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <button className="font-sans">
+                    <a href="/api/auth/login">Login</a>
+                  </button>
+                </>
+              )}
               <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
                 Contact us
               </button>
@@ -81,7 +97,21 @@ export default function Navbar() {
                   </li>
                 ))}
                 <div className="flex flex-col space-y-3">
-                  <button className="font-sans">Login</button>
+                  {user ? (
+                    <>
+                      <div>
+                        {user.name}
+                        <a href="/api/auth/logout">Logout</a>
+                        <br></br>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <button className="font-sans">
+                        <a href="/api/auth/login">Login</a>
+                      </button>
+                    </>
+                  )}
                   <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
                     Contact us
                   </button>
