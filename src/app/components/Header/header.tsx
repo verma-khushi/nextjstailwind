@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import data from "./header.json";
 import { useUser } from "@auth0/nextjs-auth0/client";
+import Link from "next/link";
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { user, error, isLoading } = useUser();
@@ -46,23 +47,26 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <div className="relative 2xl:left-[670px] md:left-[560px] space-x-10 flex">
+            <div className="relative 2xl:left-[670px] md:left-[560px]  flex">
               {user ? (
                 <>
-                  <div>
-                    {user.name} <a href="/api/auth/logout">Logout</a>
+                  <div className=" relative right-28 space-x-5">
+                    {user.name} <Link href="/api/auth/logout">Logout</Link>
+                    <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
+                      Contact us
+                    </button>
                   </div>
                 </>
               ) : (
                 <>
-                  <button className="font-sans">
-                    <a href="/api/auth/login">Login</a>
+                  <button className="font-sans space-x-8">
+                    <Link href="/api/auth/login">Login</Link>
+                    <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
+                      Contact us
+                    </button>
                   </button>
                 </>
               )}
-              <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
-                Contact us
-              </button>
             </div>
           </div>
         </div>
@@ -99,16 +103,16 @@ export default function Navbar() {
                 <div className="flex flex-col space-y-3">
                   {user ? (
                     <>
-                      <div>
-                        {user.name}
-                        <a href="/api/auth/logout">Logout</a>
+                      <div className="space-x-3">
+                        <span>{user.name}</span>
+                        <Link href="/api/auth/logout">Logout</Link>
                         <br></br>
                       </div>
                     </>
                   ) : (
                     <>
-                      <button className="font-sans">
-                        <a href="/api/auth/login">Login</a>
+                      <button className="font-sans ">
+                        <Link href="/api/auth/login">Login</Link>
                       </button>
                     </>
                   )}
