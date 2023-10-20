@@ -4,11 +4,13 @@ import Image from "next/image";
 import data from "./header.json";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
-export default function Navbar() {
+import { connect } from "react-redux";
+import { loginSuccess, loginFailure, logout } from "component/store/actions";
+import { useDispatch } from "react-redux";
+
+export function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const { user, error, isLoading } = useUser();
-  // if (isLoading) return <div>Loading...</div>;
-  // if (error) return <div>{error.message}</div>;
+  const { user } = useUser();
 
   const toggleNavbar = () => {
     setIsNavOpen(!isNavOpen);
@@ -16,6 +18,22 @@ export default function Navbar() {
 
   const closeNavbar = () => {
     setIsNavOpen(false);
+  };
+
+  const dispatch = useDispatch();
+  const handleLogin = async () => {
+    try {
+      //  successful login
+      const user = { name: "John Doe" };
+      dispatch(loginSuccess(user));
+    } catch (error) {
+      // If login fails
+      dispatch(loginFailure(error));
+    }
+  };
+  const handleLogout = () => {
+    // Dispatch the logout action
+    dispatch(logout());
   };
 
   return (
@@ -51,7 +69,10 @@ export default function Navbar() {
               {user ? (
                 <>
                   <div className=" relative right-28 space-x-5">
-                    {user.name} <Link href="/api/auth/logout">Logout</Link>
+                    {user.name}
+                    <Link href="/api/auth/logout" onClick={handleLogout}>
+                      Logout
+                    </Link>
                     <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
                       Contact us
                     </button>
@@ -59,12 +80,14 @@ export default function Navbar() {
                 </>
               ) : (
                 <>
-                  <button className="font-sans space-x-8">
-                    <Link href="/api/auth/login">Login</Link>
+                  <div className="font-sans space-x-8">
+                    <Link href="/api/auth/login" onClick={handleLogin}>
+                      Login
+                    </Link>
                     <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
                       Contact us
                     </button>
-                  </button>
+                  </div>
                 </>
               )}
             </div>
@@ -105,14 +128,18 @@ export default function Navbar() {
                     <>
                       <div className="space-x-3">
                         <span>{user.name}</span>
-                        <Link href="/api/auth/logout">Logout</Link>
+                        <Link href="/api/auth/logout" onClick={handleLogout}>
+                          Logout
+                        </Link>
                         <br></br>
                       </div>
                     </>
                   ) : (
                     <>
                       <button className="font-sans ">
-                        <Link href="/api/auth/login">Login</Link>
+                        <Link href="/api/auth/login" onClick={handleLogin}>
+                          Login
+                        </Link>
                       </button>
                     </>
                   )}
@@ -153,3 +180,14 @@ export default function Navbar() {
     </nav>
   );
 }
+const mapStateToProps = (state: { user: any }) => ({
+  user: state.user,
+});
+
+const mapDispatchToProps = {
+  dispatchLoginSuccess: loginSuccess,
+  dispatchLoginFailure: loginFailure,
+  dispatchLogout: logout,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
