@@ -37,10 +37,7 @@ export function Navbar() {
   };
 
   return (
-    <nav
-      className="flex fixed w-full bg-white top-0 left-0 z-20"
-      id="top-section"
-    >
+    <nav className="flex fixed w-full bg-white  z-20" id="top-section">
       {}
       {isNavOpen ? null : (
         <div className="2xl:container max-w-screen-xl relative left-[20px] flex gap-[10px] items-center p-7">
@@ -68,9 +65,13 @@ export function Navbar() {
             <div className="relative 2xl:left-[670px] md:left-[560px]  flex">
               {user ? (
                 <>
-                  <div className=" relative right-28 space-x-5">
+                  <div className=" relative right-28 space-x-5 ">
                     {user.name}
-                    <Link href="/api/auth/logout" onClick={handleLogout}>
+                    <Link
+                      href="/api/auth/logout"
+                      onClick={handleLogout}
+                      className="relative left-2"
+                    >
                       Logout
                     </Link>
                     <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
@@ -116,7 +117,7 @@ export function Navbar() {
                 />
               </svg>
             </button>
-            <div className="fixed left-0  bg-white shadow-lg w-full">
+            <div className="fixed left-0  bg-white  shadow-lg w-full">
               <ul className="p-16 space-y-10 text-center">
                 {data.MenuItems.map((data, index) => (
                   <li key={index}>
