@@ -22,7 +22,7 @@ export default function AccordianSlider() {
           <h1 className="md:text-xl font-semibold relative md:left-[70px] left-[10px] text-base">
             Our values
           </h1>
-          <div className="controls relative bottom-12 md:right-20 right-10">
+          <div className="controls relative bottom-12 md:right-20 right-4">
             <button className="blaze-prev" aria-label="Move To previous slide">
               <ArrowLeft />
             </button>
