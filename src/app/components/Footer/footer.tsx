@@ -3,7 +3,12 @@ import React from "react";
 import data from "./footer.json";
 function getFooterdata() {
   return data;
+
 }
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 export default function Footer() {
   const FooterData = getFooterdata();
   // console.log("footerdata",FooterData)
@@ -87,6 +92,7 @@ export default function Footer() {
           width={80}
           height={20}
           className="cursor-pointer"
+          onClick={scrollToTop} 
         />
       </div>
     </div>
