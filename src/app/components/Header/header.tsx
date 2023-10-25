@@ -37,7 +37,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="flex fixed w-full bg-white  z-20" id="top-section">
+    <nav className=" flex fixed w-full bg-white  z-20" id="top-section">
       {}
       {isNavOpen ? null : (
         <div className="2xl:container max-w-screen-xl relative left-[20px] flex gap-[10px] items-center p-7">

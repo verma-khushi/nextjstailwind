@@ -1,17 +1,16 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import data from "./footer.json";
+import "../../styles/footer.css";
 function getFooterdata() {
   return data;
-
 }
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
-
 export default function Footer() {
   const FooterData = getFooterdata();
   // console.log("footerdata",FooterData)
+  const scrollToTop = () => {
+    document.documentElement.scrollTop = 0;
+  };
   return (
     <div className="2xl:container bg-lightgray grid grid-cols-1 xl:grid-cols-5  xl:pb-0 lg:grid-cols-3 md:grid-cols-1 gap-[2%] py-5 relative top-[300px] md:top-0 md:pb-16 pb-20">
       <div className="container xl:ml-8 mt-5 md:pl-0 pl-8  ">
@@ -92,7 +91,7 @@ export default function Footer() {
           width={80}
           height={20}
           className="cursor-pointer"
-          onClick={scrollToTop} 
+          onClick={scrollToTop}
         />
       </div>
     </div>

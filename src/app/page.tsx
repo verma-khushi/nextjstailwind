@@ -8,6 +8,7 @@ import Team from "./components/Testimonials/testimonials";
 import WeWorkFamily from "./components/WeWorkFamily/weworkfamily";
 
 export default function Home() {
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   return (
     <>
       <Hero />

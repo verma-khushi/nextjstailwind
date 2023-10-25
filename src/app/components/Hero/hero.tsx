@@ -14,7 +14,7 @@ export default function Hero() {
   const HeroData = getHerodata();
   // console.log("Hero", HeroData);
   return (
-    <div className="  relative flex flex-wrap items-center justify-between   py-12 ">
+    <div className="relative flex flex-wrap items-center justify-between   py-12 ">
       {HeroData.map((data) => (
         <>
           <Image
