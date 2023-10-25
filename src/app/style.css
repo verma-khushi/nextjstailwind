@@ -1,7 +1,9 @@
 /* fix layout shifts */
 html,
 body {
+  @media screen and (max-width: 1024px){
   overflow-x: hidden;
+  }
 }
 
 .blaze-slider.my-slider {
