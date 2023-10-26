@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    images: {
+        domains: [
+         "nextjstailwind-weld.vercel.app"
+        ],
+    }
+      
+}
 
 module.exports = nextConfig
