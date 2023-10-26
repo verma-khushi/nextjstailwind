@@ -22,7 +22,6 @@ export default function GreatPlaceToWork() {
           className="w-full 2xl:container"
           width={1390}
           height={608}
-          unoptimized
         />
       ))}
     </div>
