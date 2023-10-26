@@ -66,7 +66,8 @@ export function Navbar() {
               {user ? (
                 <>
                   <div className=" relative right-28 space-x-5 ">
-                    {user.name}
+                    <div className="relative right-8 space-x-5">
+                    {user.name} 
                     <Link
                       href="/api/auth/logout"
                       onClick={handleLogout}
@@ -74,9 +75,12 @@ export function Navbar() {
                     >
                       Logout
                     </Link>
+                   
                     <button className="bg-blue p-3 text-white text-[15px] font-medium rounded font-sans">
                       Contact us
                     </button>
+                    </div>
+                   
                   </div>
                 </>
               ) : (

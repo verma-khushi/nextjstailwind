@@ -9,7 +9,7 @@ export default function Footer() {
   const FooterData = getFooterdata();
   // console.log("footerdata",FooterData)
   const scrollToTop = () => {
-    document.documentElement.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <div className="2xl:container bg-lightgray grid grid-cols-1 xl:grid-cols-5  xl:pb-0 lg:grid-cols-3 md:grid-cols-1 gap-[2%] py-5 relative top-[300px] md:top-0 md:pb-16 pb-20">
