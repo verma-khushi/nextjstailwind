@@ -1,6 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import data from "./greatplacetowork.json";
+// import Image, { ImageLoaderProps } from "next/future/image";
+// import { ImageLoader } from "next/dist/client/future/image";
+// const contentfulImageLoader: ImageLoader = ({
+//   src,
+//   width,
+// }: ImageLoaderProps) => {
+//   return `${src}?w=${width}`;
+// };
 interface GreatPlaceToWork {
   image: string;
 }
@@ -16,13 +24,19 @@ export default function GreatPlaceToWork() {
       {WorkData.map((data: GreatPlaceToWork, index: number) => (
         <Image
           key={index}
-          src={data.image}
+          src={"/GreatPlace.png"}
           alt="great place to work"
           priority={true}
           className="w-full 2xl:container"
           width={1390}
           height={608}
         />
+        // <Image loader={contentfulImageLoader} key={index} src={data.image} alt="great place to work" 
+        // priority={true}
+        //   className="w-full 2xl:container"
+        //   width={1390}
+        //   height={608}
+        // />
       ))}
     </div>
   );
